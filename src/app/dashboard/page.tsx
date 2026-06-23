@@ -46,9 +46,9 @@ export default function DashboardPage() {
       .on(
         "postgres_changes",
         { event: "INSERT", schema: "public", table: "waitlist" },
-        (payload) => {
+        (payload: { new: Record<string, unknown> }) => {
           setQueue((prev) => {
-            const row = payload.new as WaitlistEntry;
+            const row = payload.new as unknown as WaitlistEntry;
             if (prev.some((e) => e.id === row.id)) return prev;
             return [...prev, row].sort(
               (a, b) =>
@@ -60,7 +60,7 @@ export default function DashboardPage() {
       .on(
         "postgres_changes",
         { event: "DELETE", schema: "public", table: "waitlist" },
-        (payload) => {
+        (payload: { old: Record<string, unknown> }) => {
           const oldRow = payload.old as { id: string };
           setQueue((prev) => prev.filter((e) => e.id !== oldRow.id));
           // In simulation, reload history from storage after delete.

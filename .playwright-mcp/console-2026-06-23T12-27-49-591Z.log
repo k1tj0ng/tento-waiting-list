@@ -1,0 +1,119 @@
+[    1169ms] [ERROR] Loading the font 'https://lishhsx6kmthaacj.public.blob.vercel-storage.com/fonts/dseg7classic-bold.counter.woff2' violates the following Content Security Policy directive: "font-src 'self' vercel.com assets.vercel.com vercel.live fonts.gstatic.com *.vercel.sh". The action has been blocked. @ https://vercel.com/:27
+[    1383ms] [LOG] %c
+▲
+
+ _____ _              _                    _   _             __
+|_   _| |__   ___    / \   __ _  ___ _ __ | |_(_) ___       / /
+  | | | '_ \ / _ \  / _ \ / _` |/ _ \ '_ \| __| |/ __|     / /
+  | | | | | |  __/ / ___ \ (_| |  __/ | | | |_| | (__     /_/
+  |_| |_| |_|\___|/_/   \_\__, |\___|_| |_|\__|_|\___|    (_)
+                           |___/
+ ___        __               _                   _                 _
+|_ _|_ __  / _|_ __ __ _ ___| |_ _ __ _   _  ___| |_ _   _ _ __ ___
+ | || '_ \| |_| '__/ _` / __| __| '__| | | |/ __| __| | | | '__/ _ \
+ | || | | |  _| | | (_| \__ \ |_| |  | |_| | (__| |_| |_| | | |  __/
+|___|_| |_|_| |_|  \__,_|___/\__|_|   \__,_|\___|\__|\__,_|_|  \___|
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/0s_873k84d5dt.js:78
+[    1484ms] [ERROR] Loading the image 'https://py8fhxnkzwtsqdo9.public.blob.vercel-storage.com/front/favicon/vercel/android-chrome-192x192.png' violates the following Content Security Policy directive: "img-src 'self' blob: data: *.github.io avatars.githubusercontent.com user-images.githubusercontent.com vercel.com vercel.live *.vercel.sh assets.vercel.com cdn.raster.app https://images.ctfassets.net https://www.google.com https://i.ytimg.com https://s3.amazonaws.com pbs.twimg.com https://www.gravatar.com https://lishhsx6kmthaacj.public.blob.vercel-storage.com". The action has been blocked. @ https://vercel.com/:0
+[    1499ms] [WARNING] Error while trying to use the following icon from the Manifest: https://py8fhxnkzwtsqdo9.public.blob.vercel-storage.com/front/favicon/vercel/android-chrome-192x192.png (Download error or resource isn't a valid image) @ https://vercel.com/:0
+[    1629ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/3jbi4fjmxjzs9.js:18
+[    1795ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/jwt:0
+[    5604ms] [WARNING] The resource https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/42nwxo1whdz3f.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/:0
+[    5605ms] [WARNING] The resource https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/1romvr7vaomjj.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/:0
+[    8759ms] [LOG] %c
+▲
+
+ _____ _              _                    _   _             __
+|_   _| |__   ___    / \   __ _  ___ _ __ | |_(_) ___       / /
+  | | | '_ \ / _ \  / _ \ / _` |/ _ \ '_ \| __| |/ __|     / /
+  | | | | | |  __/ / ___ \ (_| |  __/ | | | |_| | (__     /_/
+  |_| |_| |_|\___|/_/   \_\__, |\___|_| |_|\__|_|\___|    (_)
+                           |___/
+ ___        __               _                   _                 _
+|_ _|_ __  / _|_ __ __ _ ___| |_ _ __ _   _  ___| |_ _   _ _ __ ___
+ | || '_ \| |_| '__/ _` / __| __| '__| | | |/ __| __| | | | '__/ _ \
+ | || | | |  _| | | (_| \__ \ |_| |  | |_| | (__| |_| |_| | | |  __/
+|___|_| |_|_| |_|  \__,_|___/\__|_|   \__,_|\___|\__|\__,_|_|  \___|
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/immutable/chunks/09cizcx7bxmnn.js:78
+[    9041ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/immutable/chunks/30boi8e69jjip.js:18
+[    9171ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/jwt:0
+[    9715ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/dash-tips?teamId=:0
+[    9716ms] [LOG] Ignored request error CustomFetchError: You don't have permission to access this resource.
+    at d (https://vercel.com/_next/static/immutable/chunks/2bb0f4z_qdzvc.js:2:36165)
+    at async revalidateOnFocus (https://vercel.com/_next/static/immutable/chunks/43yuohtvldyax.js:2:619)
+    at async https://vercel.com/_next/static/immutable/chunks/2-n2idym-2ql2.js:2:14252 @ https://vercel.com/_next/static/immutable/chunks/30boi8e69jjip.js:16
+[   19338ms] [LOG] %c
+▲
+
+    ________   _ __ _          ____           __
+   /  _/ __/  (_) /( )_____   / __/___ ______/ /_
+   / // /_   / / __/// ___/  / /_/ __ `/ ___/ __/
+ _/ // __/  / / /_  (__  )  / __/ /_/ (__  ) /_
+/___/_/    /_/\__/ /____/  /_/  \__,_/____/\__/
+    _ __ _                         _    __                    __
+   (_) /( )_____   ____  ____     | |  / /__  _____________  / /
+  / / __/// ___/  / __ \/ __ \    | | / / _ \/ ___/ ___/ _ \/ /
+ / / /_  (__  )  / /_/ / / / /    | |/ /  __/ /  / /__/  __/ /
+/_/\__/ /____/   \____/_/ /_/     |___/\___/_/   \___/\___/_/
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/immutable/chunks/09cizcx7bxmnn.js:78
+[   21046ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/immutable/chunks/30boi8e69jjip.js:18
+[   27076ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3l1vkaiao2o7o.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   27076ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2iotk8f69wufi.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   27076ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1777f8dhtch_9.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   27076ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2mxmsod2cktsx.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   27076ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3jtm8y2mvqhyz.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   27076ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3k1dyb2k_5yee.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   27076ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3ade_2k2wq7pb.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   27076ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1_-gzlz1lfys2.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   27076ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/0kyx01a66pk9m.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   33678ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3l1vkaiao2o7o.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   33679ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2iotk8f69wufi.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   33679ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1777f8dhtch_9.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   33679ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2mxmsod2cktsx.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   33679ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3jtm8y2mvqhyz.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   33679ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3k1dyb2k_5yee.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   33679ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3ade_2k2wq7pb.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   33679ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1_-gzlz1lfys2.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   33679ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/0kyx01a66pk9m.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   62716ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3l1vkaiao2o7o.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   62717ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2iotk8f69wufi.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   62717ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1777f8dhtch_9.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   62717ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2mxmsod2cktsx.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   62717ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3jtm8y2mvqhyz.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   62717ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3k1dyb2k_5yee.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   62717ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3ade_2k2wq7pb.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   62717ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1_-gzlz1lfys2.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   62717ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/0kyx01a66pk9m.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   68765ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3l1vkaiao2o7o.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   68765ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2iotk8f69wufi.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   68765ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1777f8dhtch_9.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   68765ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/2mxmsod2cktsx.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   68765ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3jtm8y2mvqhyz.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   68765ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3k1dyb2k_5yee.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   68765ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/3ade_2k2wq7pb.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   68765ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/1_-gzlz1lfys2.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0
+[   68765ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/0kyx01a66pk9m.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/new:0

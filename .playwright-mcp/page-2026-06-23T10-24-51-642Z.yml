@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Tento" [level=1] [ref=e5]
+        - paragraph [ref=e6]: Restaurant & Bar
+      - generic [ref=e21]:
+        - generic [ref=e22]: 🍽️
+        - heading "You're on the list!" [level=2] [ref=e23]
+        - paragraph [ref=e24]: We will call you when your table is ready. Please keep this tab open to see your status.
+        - generic [ref=e26]: "Status: Waiting"
+        - generic [ref=e28]:
+          - paragraph [ref=e29]: James Nguyen · 3 guests
+          - paragraph [ref=e30]: 0498 765 432
+      - generic [ref=e18]: Simulation mode — data lives in localStorage & BroadcastChannel. No Supabase required.
+      - generic [ref=e19]: We never store your details. Your info is removed the moment you're seated.
+  - alert [ref=e20]

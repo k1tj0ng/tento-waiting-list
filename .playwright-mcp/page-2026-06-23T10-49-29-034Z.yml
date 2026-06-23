@@ -1,0 +1,305 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - banner [ref=e6]:
+        - generic [ref=e7]:
+          - generic [ref=e8]:
+            - link "Supabase" [ref=e9] [cursor=pointer]:
+              - /url: /dashboard/org/bpioysyhgjlbfkklahfy
+              - img "Supabase" [ref=e10]
+            - generic [ref=e11]:
+              - img [ref=e242]
+              - generic [ref=e244]:
+                - link "k1tj0ng's Org Free" [ref=e245] [cursor=pointer]:
+                  - /url: /dashboard/org/bpioysyhgjlbfkklahfy
+                  - img [ref=e246]
+                  - generic [ref=e256]: k1tj0ng's Org
+                  - generic [ref=e257]: Free
+                - button [ref=e258] [cursor=pointer]:
+                  - img [ref=e260]
+              - generic [ref=e12]:
+                - img [ref=e14]
+                - generic [ref=e263]:
+                  - link "k1tj0ng's Project" [ref=e264] [cursor=pointer]:
+                    - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu
+                    - img [ref=e265]
+                    - generic "k1tj0ng's Project" [ref=e268]
+                  - button [ref=e269] [cursor=pointer]:
+                    - img [ref=e271]
+                - img [ref=e275]
+                - generic [ref=e277]:
+                  - link "main Production" [ref=e278] [cursor=pointer]:
+                    - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu
+                    - generic "main" [ref=e279]
+                    - generic [ref=e280]: Production
+                  - button [ref=e281] [cursor=pointer]:
+                    - img [ref=e283]
+            - button "Connect" [ref=e286] [cursor=pointer]:
+              - img [ref=e288]
+              - generic [ref=e290]: Connect
+          - generic [ref=e23]:
+            - generic [ref=e25] [cursor=pointer]: Feedback
+            - generic [ref=e26]:
+              - button "Search..." [ref=e27]:
+                - generic [ref=e28]:
+                  - img [ref=e29]
+                  - paragraph [ref=e32]: Search...
+                - generic [ref=e34]: ⌘K
+              - button "Help" [ref=e35] [cursor=pointer]:
+                - generic [ref=e36]:
+                  - img [ref=e37]
+                  - generic [ref=e40]: Help
+              - button "Advisor Center" [ref=e42] [cursor=pointer]:
+                - generic [ref=e43]:
+                  - img [ref=e44]
+                  - generic [ref=e46]: Advisor Center
+              - button "SQL Editor" [ref=e47] [cursor=pointer]:
+                - generic [ref=e48]:
+                  - img [ref=e49]
+                  - generic [ref=e51]: SQL Editor
+              - button "AI Assistant" [ref=e52] [cursor=pointer]:
+                - generic [ref=e53]:
+                  - img [ref=e56]
+                  - generic [ref=e59]: AI Assistant
+            - button "k1tj0ng" [ref=e291] [cursor=pointer]:
+              - img "k1tj0ng" [ref=e292]
+      - generic [ref=e65]:
+        - generic [ref=e69]:
+          - list [ref=e72]:
+            - generic [ref=e73]:
+              - listitem [ref=e74]:
+                - link "Project Overview" [ref=e75] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu
+                  - img [ref=e76]
+                  - generic: Project Overview
+              - listitem [ref=e78]:
+                - link "Table Editor" [ref=e293] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/editor
+                  - img [ref=e294]
+                  - generic: Table Editor
+              - listitem [ref=e79]:
+                - link "SQL Editor" [ref=e296] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/sql
+                  - img [ref=e297]
+                  - generic: SQL Editor
+            - generic [ref=e80]:
+              - listitem [ref=e81]:
+                - link "Database" [ref=e299] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/database/schemas
+                  - img [ref=e300]
+                  - generic: Database
+              - listitem [ref=e82]:
+                - link "Authentication" [ref=e304] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/auth/users
+                  - img [ref=e305]
+                  - generic: Authentication
+              - listitem [ref=e83]:
+                - link "Storage" [ref=e307] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/storage/files
+                  - img [ref=e308]
+                  - generic: Storage
+              - listitem [ref=e84]:
+                - link "Edge Functions" [ref=e85] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/functions
+                  - img [ref=e86]
+                  - generic: Edge Functions
+              - listitem [ref=e91]:
+                - link "Realtime" [ref=e310] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/realtime/inspector
+                  - img [ref=e311]
+                  - generic: Realtime
+            - generic [ref=e92]:
+              - listitem [ref=e94]:
+                - link "Advisors" [ref=e313] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/advisors/security
+                  - img [ref=e314]
+                  - generic: Advisors
+              - listitem [ref=e95]:
+                - link "Observability" [ref=e316] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/observability
+                  - img [ref=e317]
+                  - generic: Observability
+              - listitem [ref=e96]:
+                - link "Logs" [ref=e97] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/logs/explorer
+                  - img [ref=e98]
+                  - generic: Logs
+              - listitem [ref=e99]:
+                - link "Integrations" [ref=e325] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/integrations
+                  - img [ref=e326]
+                  - generic: Integrations
+            - listitem [ref=e101]:
+              - link "Project Settings" [ref=e102] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/general
+                - img [ref=e103]
+                - generic: Project Settings
+          - button "Sidebar control" [ref=e108] [cursor=pointer]:
+            - img [ref=e110]
+        - generic [ref=e117]:
+          - generic [ref=e121]:
+            - heading "Settings" [level=4] [ref=e123]
+            - menu "Sidebar" [disabled] [ref=e126]:
+              - list [ref=e127]:
+                - generic [ref=e130]:
+                  - generic [ref=e134]: Configuration
+                  - generic [ref=e135]:
+                    - link "General" [disabled] [ref=e136] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/general
+                      - menuitem "General" [disabled] [ref=e137]:
+                        - generic [ref=e141]: General
+                    - link "Compute and Disk" [disabled] [ref=e329] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/compute-and-disk
+                      - menuitem "Compute and Disk" [disabled] [ref=e330]:
+                        - generic [ref=e334]: Compute and Disk
+                    - link "Infrastructure" [disabled] [ref=e335] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/infrastructure
+                      - menuitem "Infrastructure" [disabled] [ref=e336]:
+                        - generic [ref=e340]: Infrastructure
+                    - link "Integrations" [disabled] [ref=e341] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/integrations
+                      - menuitem "Integrations" [disabled] [ref=e342]:
+                        - generic [ref=e346]: Integrations
+                    - link "API Keys" [disabled] [ref=e347] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/api-keys
+                      - menuitem "API Keys" [disabled] [ref=e348]:
+                        - generic [ref=e352]: API Keys
+                    - link "JWT Keys" [disabled] [ref=e353] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/jwt
+                      - menuitem "JWT Keys" [disabled] [ref=e354]:
+                        - generic [ref=e358]: JWT Keys
+                    - link "Log Drains" [disabled] [ref=e359] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/log-drains
+                      - menuitem "Log Drains" [disabled] [ref=e360]:
+                        - generic [ref=e364]: Log Drains
+                    - link "Add-ons" [disabled] [ref=e142] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/addons
+                      - menuitem "Add-ons" [disabled] [ref=e143]:
+                        - generic [ref=e147]: Add-ons
+                - generic [ref=e151]:
+                  - generic [ref=e155]: Integrations
+                  - generic [ref=e156]:
+                    - link "Data API" [disabled] [ref=e365] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/integrations/data_api/overview
+                      - menuitem "Data API" [disabled] [ref=e366]:
+                        - generic [ref=e368]:
+                          - generic "Data API" [ref=e369]:
+                            - generic [ref=e370]: Data API
+                          - img [ref=e372]
+                    - link "Vault Beta" [disabled] [ref=e375] [cursor=pointer]:
+                      - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/integrations/vault/overview
+                      - menuitem "Vault Beta" [disabled] [ref=e376]:
+                        - generic [ref=e378]:
+                          - generic "Vault" [ref=e379]:
+                            - generic [ref=e380]: Vault
+                            - generic [ref=e381]: Beta
+                          - img [ref=e383]
+                - generic [ref=e160]:
+                  - generic [ref=e164]: Billing
+                  - generic [ref=e165]:
+                    - link "Subscription" [disabled] [ref=e166] [cursor=pointer]:
+                      - /url: /dashboard/org/bpioysyhgjlbfkklahfy/billing
+                      - menuitem "Subscription" [disabled] [ref=e167]:
+                        - generic [ref=e169]:
+                          - generic "Subscription" [ref=e170]:
+                            - generic [ref=e171]: Subscription
+                          - img [ref=e173]
+                    - link "Usage" [disabled] [ref=e176] [cursor=pointer]:
+                      - /url: /dashboard/org/bpioysyhgjlbfkklahfy/usage?projectRef=hpsdzbwtcezqwvlvjolu
+                      - menuitem "Usage" [disabled] [ref=e177]:
+                        - generic [ref=e179]:
+                          - generic "Usage" [ref=e180]:
+                            - generic [ref=e181]: Usage
+                          - img [ref=e183]
+          - separator [disabled] [ref=e186]:
+            - img [ref=e188]
+          - main [ref=e197]:
+            - generic [ref=e386]:
+              - generic [ref=e387]:
+                - generic [ref=e389]:
+                  - generic [ref=e392]:
+                    - heading "API Keys" [level=1] [ref=e393]
+                    - paragraph [ref=e394]: Configure API keys to securely control access to your project
+                  - link "Docs" [ref=e397] [cursor=pointer]:
+                    - /url: https://supabase.com/docs/guides/api/api-keys
+                    - img [ref=e399]
+                    - generic [ref=e402]: Docs
+                - navigation [ref=e403]:
+                  - menu [ref=e404]:
+                    - listitem [ref=e405]:
+                      - link "Publishable and secret API keys" [ref=e406] [cursor=pointer]:
+                        - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/api-keys
+                    - listitem [ref=e407]:
+                      - link "Legacy anon, service_role API keys" [active] [ref=e408] [cursor=pointer]:
+                        - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/api-keys/legacy
+              - generic [ref=e409]:
+                - generic [ref=e577]:
+                  - generic [ref=e579]:
+                    - generic [ref=e583]:
+                      - code [ref=e584]: anon
+                      - code [ref=e585]: public
+                    - generic [ref=e586]:
+                      - group [ref=e588]:
+                        - textbox [ref=e589]: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhwc2R6Ynd0Y2V6cXd2bHZqb2x1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyMDY3OTAsImV4cCI6MjA5Nzc4Mjc5MH0.gMjD5X-E-tBZhUspBZnPzk5amduKOs9l9NF1rOFVrdk
+                        - group [ref=e590]:
+                          - button "Copy" [ref=e591] [cursor=pointer]:
+                            - img [ref=e593]
+                            - generic [ref=e596]: Copy
+                      - paragraph [ref=e597]:
+                        - text: This key is safe to use in a browser if you have enabled Row Level Security for your tables and configured policies.
+                        - generic [ref=e598]:
+                          - text: Prefer using
+                          - link "Publishable API keys" [ref=e599] [cursor=pointer]:
+                            - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/api-keys/new
+                          - text: instead.
+                  - generic [ref=e601]:
+                    - generic [ref=e605]:
+                      - code [ref=e606]: service_role
+                      - code [ref=e607]: secret
+                    - generic [ref=e608]:
+                      - group [ref=e610]:
+                        - textbox [ref=e611]: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhwc2R6Ynd0Y2V6cXd2bHZqb2x1Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MjIwNjc5MCwiZXhwIjoyMDk3NzgyNzkwfQ.wYsng1i3rIrkAFLCZjZu-m06xzb4YqJAz_ue_F3agU0
+                        - group [ref=e612]:
+                          - button "Reveal" [ref=e613] [cursor=pointer]:
+                            - generic [ref=e614]: Reveal
+                      - paragraph [ref=e615]:
+                        - text: This key has the ability to bypass Row Level Security. Never share it publicly. If leaked, generate a new JWT secret immediately.
+                        - generic [ref=e616]:
+                          - text: Prefer using
+                          - link "Secret API keys" [ref=e617] [cursor=pointer]:
+                            - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/api-keys/new
+                          - text: instead.
+                - generic [ref=e623]:
+                  - generic [ref=e624]:
+                    - paragraph [ref=e625]: Disable legacy API keys
+                    - paragraph [ref=e626]: Make sure you are no longer using your legacy API keys before proceeding.
+                  - button "Disable JWT-based API keys" [ref=e628] [cursor=pointer]:
+                    - generic [ref=e629]: Disable JWT-based API keys
+    - generic [ref=e526]:
+      - generic:
+        - img "Background pattern"
+      - generic [ref=e527]:
+        - button "Close banner" [ref=e529] [cursor=pointer]:
+          - img [ref=e531]
+        - generic [ref=e534]:
+          - generic [ref=e535]:
+            - generic [ref=e536]: Beta
+            - generic [ref=e538]:
+              - generic [ref=e631]:
+                - generic [ref=e633]: 23 Jun 26 20:49:27
+                - generic [ref=e634]: "200"
+              - generic [ref=e636]:
+                - generic [ref=e638]: 23 Jun 26 20:49:24
+                - generic [ref=e639]: "500"
+              - generic [ref=e566]:
+                - generic [ref=e568]: 23 Jun 26 20:49:21
+                - generic [ref=e569]: "200"
+              - generic [ref=e571]:
+                - generic [ref=e573]: 23 Jun 26 20:49:18
+                - generic [ref=e574]: "400"
+          - generic [ref=e559]:
+            - paragraph [ref=e560]: Unified Logs is here
+            - paragraph [ref=e561]: Search and correlate logs across all of your services from a single place.
+          - button "Enable Unified Logs" [ref=e563] [cursor=pointer]:
+            - generic [ref=e564]: Enable Unified Logs
+  - alert [ref=e240]: API Keys (Legacy) | Settings | k1tj0ng's Project | k1tj0ng's Org | Supabase

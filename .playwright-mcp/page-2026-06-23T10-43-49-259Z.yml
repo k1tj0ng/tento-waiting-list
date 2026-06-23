@@ -1,0 +1,285 @@
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "Supabase" [ref=e9] [cursor=pointer]:
+            - /url: /dashboard/org/bpioysyhgjlbfkklahfy
+            - img "Supabase" [ref=e10]
+          - generic [ref=e11]:
+            - img [ref=e139]
+            - generic [ref=e141]:
+              - link "k1tj0ng's Org Free" [ref=e142] [cursor=pointer]:
+                - /url: /dashboard/org/bpioysyhgjlbfkklahfy
+                - img [ref=e143]
+                - generic [ref=e153]: k1tj0ng's Org
+                - generic [ref=e154]: Free
+              - button [ref=e155] [cursor=pointer]:
+                - img [ref=e157]
+            - generic [ref=e12]:
+              - img [ref=e14]
+              - generic [ref=e160]:
+                - link "k1tj0ng's Project" [ref=e161] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu
+                  - img [ref=e162]
+                  - generic "k1tj0ng's Project" [ref=e165]
+                - button [ref=e166] [cursor=pointer]:
+                  - img [ref=e168]
+              - img [ref=e172]
+              - generic [ref=e174]:
+                - link "main Production" [ref=e175] [cursor=pointer]:
+                  - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu
+                  - generic "main" [ref=e176]
+                  - generic [ref=e177]: Production
+                - button [ref=e178] [cursor=pointer]:
+                  - img [ref=e180]
+          - button "Connect" [ref=e183] [cursor=pointer]:
+            - img [ref=e185]
+            - generic [ref=e187]: Connect
+        - generic [ref=e23]:
+          - generic [ref=e25] [cursor=pointer]: Feedback
+          - generic [ref=e26]:
+            - button "Search..." [ref=e27]:
+              - generic [ref=e28]:
+                - img [ref=e29]
+                - paragraph [ref=e32]: Search...
+              - generic [ref=e34]: ⌘K
+            - button "Help" [ref=e35] [cursor=pointer]:
+              - generic [ref=e36]:
+                - img [ref=e37]
+                - generic [ref=e40]: Help
+            - button "Advisor Center" [ref=e42] [cursor=pointer]:
+              - generic [ref=e43]:
+                - img [ref=e44]
+                - generic [ref=e46]: Advisor Center
+            - button "SQL Editor" [ref=e47] [cursor=pointer]:
+              - generic [ref=e48]:
+                - img [ref=e49]
+                - generic [ref=e51]: SQL Editor
+            - button "AI Assistant" [ref=e52] [cursor=pointer]:
+              - generic [ref=e53]:
+                - img [ref=e56]
+                - generic [ref=e59]: AI Assistant
+          - button "k1tj0ng" [ref=e188] [cursor=pointer]:
+            - img "k1tj0ng" [ref=e189]
+    - generic [ref=e65]:
+      - generic [ref=e69]:
+        - list [ref=e72]:
+          - generic [ref=e73]:
+            - listitem [ref=e74]:
+              - link "Project Overview" [ref=e75] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu
+                - img [ref=e76]
+                - generic: Project Overview
+            - listitem [ref=e78]:
+              - link "Table Editor" [ref=e190] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/editor
+                - img [ref=e191]
+                - generic: Table Editor
+            - listitem [ref=e79]:
+              - link "SQL Editor" [ref=e193] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/sql
+                - img [ref=e194]
+                - generic: SQL Editor
+          - generic [ref=e80]:
+            - listitem [ref=e81]:
+              - link "Database" [ref=e196] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/database/schemas
+                - img [ref=e197]
+                - generic: Database
+            - listitem [ref=e82]:
+              - link "Authentication" [ref=e201] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/auth/users
+                - img [ref=e202]
+                - generic: Authentication
+            - listitem [ref=e83]:
+              - link "Storage" [ref=e204] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/storage/files
+                - img [ref=e205]
+                - generic: Storage
+            - listitem [ref=e84]:
+              - link "Edge Functions" [ref=e85] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/functions
+                - img [ref=e86]
+                - generic: Edge Functions
+            - listitem [ref=e91]:
+              - link "Realtime" [ref=e207] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/realtime/inspector
+                - img [ref=e208]
+                - generic: Realtime
+          - generic [ref=e92]:
+            - listitem [ref=e94]:
+              - link "Advisors" [ref=e210] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/advisors/security
+                - img [ref=e211]
+                - generic: Advisors
+            - listitem [ref=e95]:
+              - link "Observability" [ref=e213] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/observability
+                - img [ref=e214]
+                - generic: Observability
+            - listitem [ref=e96]:
+              - link "Logs" [ref=e97] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/logs/explorer
+                - img [ref=e98]
+                - generic: Logs
+            - listitem [ref=e99]:
+              - link "Integrations" [ref=e222] [cursor=pointer]:
+                - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/integrations
+                - img [ref=e223]
+                - generic: Integrations
+          - listitem [ref=e101]:
+            - link "Project Settings" [ref=e102] [cursor=pointer]:
+              - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/settings/general
+              - img [ref=e103]
+              - generic: Project Settings
+        - button "Sidebar control" [ref=e108] [cursor=pointer]:
+          - img [ref=e110]
+      - generic [ref=e117]:
+        - generic [ref=e226]:
+          - heading "SQL Editor" [level=4] [ref=e228]
+          - generic [ref=e230]:
+            - generic [ref=e231]:
+              - generic [ref=e232]:
+                - generic [ref=e234]:
+                  - generic [ref=e235]: Search queries
+                  - textbox "Search queries..." [ref=e236]
+                  - button [ref=e237]:
+                    - img [ref=e238]
+                  - img [ref=e241]
+                - button [ref=e244] [cursor=pointer]:
+                  - img [ref=e246]
+              - button "Shared" [ref=e249]:
+                - img [ref=e250]
+                - generic [ref=e252]: Shared
+              - button "Favorites" [ref=e255]:
+                - img [ref=e256]
+                - generic [ref=e258]: Favorites
+              - generic [ref=e260]:
+                - button "PRIVATE (2)" [expanded] [ref=e519]:
+                  - img [ref=e262]
+                  - generic [ref=e264]: PRIVATE (2)
+                - tree "private-snippets" [ref=e266]:
+                  - generic "Untitled query" [ref=e390] [cursor=pointer]:
+                    - generic [ref=e391]:
+                      - img [ref=e392]
+                      - generic [ref=e398]: Untitled query
+                  - generic "superbase-query" [ref=e267] [cursor=pointer]:
+                    - generic [ref=e268]:
+                      - img [ref=e269]
+                      - generic [ref=e275]: superbase-query
+              - generic [ref=e277]:
+                - button "Reference" [expanded] [ref=e278]:
+                  - img [ref=e279]
+                  - generic [ref=e281]: Reference
+                - generic [ref=e282]:
+                  - link "templates" [ref=e283] [cursor=pointer]:
+                    - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/sql/templates
+                    - img [ref=e284]
+                    - text: templates
+                  - link "examples" [ref=e286] [cursor=pointer]:
+                    - /url: /dashboard/project/hpsdzbwtcezqwvlvjolu/sql/examples
+                    - img [ref=e287]
+                    - text: examples
+            - button "View running queries" [ref=e291] [cursor=pointer]:
+              - generic [ref=e292]: View running queries
+        - separator [ref=e121]:
+          - img [ref=e123]
+        - main [ref=e132]:
+          - generic [ref=e293]:
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - button "Collapse sidebar" [ref=e296]:
+                  - img [ref=e297]
+                  - generic [ref=e300]: Collapse sidebar
+                - tablist [ref=e301]:
+                  - button "Untitled query" [ref=e400]:
+                    - tab "Untitled query" [selected] [ref=e401]:
+                      - img [ref=e402]
+                      - generic [ref=e409]: Untitled query
+                      - button [ref=e410] [cursor=pointer]:
+                        - img [ref=e411]
+                    - separator [ref=e415]
+                  - button [ref=e416]:
+                    - img [ref=e417]
+              - status [ref=e312]
+            - generic [ref=e315]:
+              - code [ref=e322]:
+                - generic [ref=e323]:
+                  - generic [ref=e325]:
+                    - generic [ref=e418]:
+                      - generic [ref=e420] [cursor=pointer]: 
+                      - generic [ref=e421]: "1"
+                    - generic [ref=e423]: "2"
+                    - generic [ref=e425]: "3"
+                    - generic [ref=e427]: "4"
+                    - generic [ref=e429]: "5"
+                    - generic [ref=e431]: "6"
+                    - generic [ref=e433]: "7"
+                    - generic [ref=e435]: "8"
+                    - generic [ref=e437]: "9"
+                    - generic [ref=e438]:
+                      - generic [ref=e439] [cursor=pointer]: 
+                      - generic [ref=e440]: "10"
+                    - generic [ref=e442]: "11"
+                    - generic [ref=e444]: "12"
+                    - generic [ref=e446]: "13"
+                    - generic [ref=e448]: "14"
+                    - generic [ref=e450]: "15"
+                    - generic [ref=e452]: "16"
+                    - generic [ref=e454]: "17"
+                    - generic [ref=e456]: "18"
+                  - generic [ref=e333]:
+                    - generic [ref=e485]: create table if not exists public.waitlist (
+                    - generic [ref=e487]: id uuid primary key default gen_random_uuid(),
+                    - generic [ref=e489]: name text not null check (char_length(name) between 1 and 80),
+                    - generic [ref=e491]: group_size smallint not null check (group_size between 1 and 10),
+                    - generic [ref=e493]: phone text not null check (char_length(phone) between 5 and 20),
+                    - generic [ref=e495]: status text not null default 'waiting' check (status in ('waiting')),
+                    - generic [ref=e497]: created_at timestamptz not null default now()
+                    - generic [ref=e499]: );
+                    - generic [ref=e502]: create index if not exists waitlist_created_at_idx
+                    - generic [ref=e504]: on public.waitlist (created_at asc);
+                    - generic [ref=e507]: alter publication supabase_realtime add table public.waitlist;
+                    - generic [ref=e510]: alter table public.waitlist replica identity full;
+                    - generic [ref=e513]: alter table public.waitlist enable row level security;
+                  - textbox "Editor content" [active] [ref=e336]: create table if not exists public.waitlist ( id uuid primary key default gen_random_uuid(), name text not null check (char_length(name) between 1 and 80), group_size smallint not null check (group_size between 1 and 10), phone text not null check (char_length(phone) between 5 and 20), status text not null default 'waiting' check (status in ('waiting')), created_at timestamptz not null default now() ); create index if not exists waitlist_created_at_idx
+              - separator [ref=e337]:
+                - img [ref=e339]
+              - generic [ref=e348]:
+                - tablist [ref=e349]:
+                  - generic [ref=e350]:
+                    - tab "Results" [selected] [ref=e351]:
+                      - generic [ref=e352]: Results
+                    - tab "Chart" [ref=e353]:
+                      - generic [ref=e354]: Chart
+                    - button "Export" [disabled]:
+                      - generic: Export
+                      - generic:
+                        - img
+                  - generic [ref=e355]:
+                    - button [ref=e356] [cursor=pointer]:
+                      - img [ref=e358]
+                    - generic [ref=e363]:
+                      - generic [ref=e364] [cursor=pointer]:
+                        - generic [ref=e365]: Source
+                        - button "Primary database" [ref=e366]:
+                          - generic [ref=e367]: Primary database
+                          - img [ref=e369]
+                      - button "Role postgres" [ref=e371] [cursor=pointer]:
+                        - generic [ref=e373]:
+                          - generic [ref=e374]: Role
+                          - generic [ref=e375]: postgres
+                          - img [ref=e376]
+                      - button "Run ⌘↵" [ref=e378] [cursor=pointer]:
+                        - generic [ref=e379]: Run
+                        - generic [ref=e525]: ⌘↵
+                - paragraph [ref=e526]: Success. No rows returned
+              - generic "Table grid footer" [ref=e527]:
+                - button "0 row" [ref=e528]:
+                  - paragraph [ref=e529]:
+                    - generic [ref=e530]: 0 row
+  - alert [ref=e137]: SQL Editor | k1tj0ng's Project | k1tj0ng's Org | Supabase
+  - generic [ref=e386]:
+    - alert
+    - alert

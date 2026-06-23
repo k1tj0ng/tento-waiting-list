@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/wipe",
+      "schedule": "59 13 * * *"
+    }
+  ]
+}

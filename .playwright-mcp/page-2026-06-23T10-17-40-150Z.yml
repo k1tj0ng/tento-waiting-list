@@ -1,0 +1,30 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "Tento" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Restaurant & Bar
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: Name
+        - textbox "Name" [ref=e10]:
+          - /placeholder: Your name
+      - generic [ref=e11]:
+        - generic [ref=e12]: Group Size
+        - combobox "Group Size" [ref=e13]:
+          - option "1 person"
+          - option "2 people" [selected]
+          - option "3 people"
+          - option "4 people"
+          - option "5 people"
+          - option "6 people"
+          - option "7 people"
+          - option "8 people"
+          - option "9 people"
+          - option "10+"
+      - generic [ref=e14]:
+        - generic [ref=e15]: Mobile Number
+        - textbox "Mobile Number" [ref=e16]:
+          - /placeholder: 04XX XXX XXX
+      - button "Join Waitlist" [ref=e17] [cursor=pointer]
+    - generic [ref=e18]: Simulation mode — data lives in localStorage & BroadcastChannel. No Supabase required.
+    - generic [ref=e19]: We never store your details. Your info is removed the moment you're seated.

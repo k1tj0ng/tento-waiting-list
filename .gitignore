@@ -17,3 +17,6 @@
 *.pem
 npm-debug.log*
 next-env.d.ts
+*.png
+*.jpg
+.playwright-mcp/

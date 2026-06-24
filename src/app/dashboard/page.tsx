@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getSupabase, isSimulationMode } from "@/lib/supabaseClient";
+import { getSupabase } from "@/lib/supabaseClient";
 import { WaitlistEntry, SeatedRecord } from "@/lib/types";
 import QueueRow from "@/components/QueueRow";
-import SimBanner from "@/components/SimBanner";
 
 function formatTime(iso: string) {
   return new Date(iso).toLocaleTimeString("en-AU", {
@@ -25,13 +24,6 @@ export default function DashboardPage() {
     const supabase = getSupabase();
 
     async function init() {
-      // Run daily reset and load history (simulation only).
-      if (isSimulationMode()) {
-        const { runDailyReset, getHistory } = await import("@/lib/mockSupabase");
-        runDailyReset();
-        setHistory(getHistory());
-      }
-
       const { data } = await supabase
         .from("waitlist")
         .select("*")
@@ -61,34 +53,20 @@ export default function DashboardPage() {
         "postgres_changes",
         { event: "DELETE", schema: "public", table: "waitlist" },
         (payload: { old: Record<string, unknown> }) => {
-          const oldRow = payload.old as { id: string };
+          const oldRow = payload.old as unknown as WaitlistEntry;
           setQueue((prev) => prev.filter((e) => e.id !== oldRow.id));
-          // In simulation, reload history from storage after delete.
-          if (isSimulationMode()) {
-            import("@/lib/mockSupabase").then(({ getHistory }) => {
-              setHistory(getHistory());
-            });
+          if (oldRow.id) {
+            setHistory((prev) => [
+              ...prev,
+              { ...oldRow, seated_at: new Date().toISOString() } as SeatedRecord,
+            ]);
           }
         }
       )
       .subscribe();
 
-    // Listen for cross-tab HISTORY updates (simulation BroadcastChannel).
-    let historyBc: BroadcastChannel | null = null;
-    if (isSimulationMode() && typeof window !== "undefined") {
-      historyBc = new BroadcastChannel("tento_sim");
-      historyBc.addEventListener("message", (msg) => {
-        if (msg.data?.event === "HISTORY") {
-          import("@/lib/mockSupabase").then(({ getHistory }) => {
-            setHistory(getHistory());
-          });
-        }
-      });
-    }
-
     return () => {
       supabase.removeChannel(channel);
-      historyBc?.close();
     };
   }, []);
 
@@ -130,8 +108,6 @@ export default function DashboardPage() {
           </div>
         </div>
       </header>
-
-      <SimBanner />
 
       <div className="max-w-3xl mx-auto px-5 py-6 space-y-3">
         {loading ? (

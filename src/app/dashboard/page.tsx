@@ -53,14 +53,17 @@ export default function DashboardPage() {
         "postgres_changes",
         { event: "DELETE", schema: "public", table: "waitlist" },
         (payload: { old: Record<string, unknown> }) => {
-          const oldRow = payload.old as unknown as WaitlistEntry;
-          setQueue((prev) => prev.filter((e) => e.id !== oldRow.id));
-          if (oldRow.id) {
-            setHistory((prev) => [
-              ...prev,
-              { ...oldRow, seated_at: new Date().toISOString() } as SeatedRecord,
-            ]);
-          }
+          const deletedId = (payload.old as { id?: string }).id;
+          setQueue((prev) => {
+            const seated = prev.find((e) => e.id === deletedId);
+            if (seated) {
+              setHistory((h) => [
+                ...h,
+                { ...seated, seated_at: new Date().toISOString() } as SeatedRecord,
+              ]);
+            }
+            return prev.filter((e) => e.id !== deletedId);
+          });
         }
       )
       .subscribe();

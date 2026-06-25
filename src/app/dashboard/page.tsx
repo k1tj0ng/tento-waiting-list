@@ -13,20 +13,6 @@ function formatTime(iso: string) {
   });
 }
 
-const STORAGE_KEY = "tento_seated_history";
-
-function loadHistory(): SeatedRecord[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw) as SeatedRecord[];
-    const today = new Date().toDateString();
-    return parsed.filter((r) => new Date(r.seated_at).toDateString() === today);
-  } catch {
-    return [];
-  }
-}
-
 export default function DashboardPage() {
   const [queue, setQueue] = useState<WaitlistEntry[]>([]);
   const [history, setHistory] = useState<SeatedRecord[]>([]);
@@ -34,27 +20,16 @@ export default function DashboardPage() {
   const [nowTick, setNowTick] = useState(0);
   const [historyOpen, setHistoryOpen] = useState(true);
 
-  // Restore history from localStorage on mount (today's entries only).
-  useEffect(() => {
-    setHistory(loadHistory());
-  }, []);
-
-  // Persist history to localStorage whenever it changes.
-  useEffect(() => {
-    if (history.length > 0) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
-    }
-  }, [history]);
-
   useEffect(() => {
     const supabase = getSupabase();
 
     async function init() {
-      const { data } = await supabase
-        .from("waitlist")
-        .select("*")
-        .order("created_at", { ascending: true });
-      setQueue((data as WaitlistEntry[]) ?? []);
+      const [{ data: queueData }, { data: historyData }] = await Promise.all([
+        supabase.from("waitlist").select("*").order("created_at", { ascending: true }),
+        supabase.from("seated_history").select("*").order("seated_at", { ascending: true }),
+      ]);
+      setQueue((queueData as WaitlistEntry[]) ?? []);
+      setHistory((historyData as SeatedRecord[]) ?? []);
       setLoading(false);
     }
     init();
@@ -80,15 +55,17 @@ export default function DashboardPage() {
         { event: "DELETE", schema: "public", table: "waitlist" },
         (payload: { old: Record<string, unknown> }) => {
           const deletedId = (payload.old as { id?: string }).id;
-          setQueue((prev) => {
-            const seated = prev.find((e) => e.id === deletedId);
-            if (seated) {
-              setHistory((h) => [
-                ...h,
-                { ...seated, seated_at: new Date().toISOString() } as SeatedRecord,
-              ]);
-            }
-            return prev.filter((e) => e.id !== deletedId);
+          setQueue((prev) => prev.filter((e) => e.id !== deletedId));
+        }
+      )
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "seated_history" },
+        (payload: { new: Record<string, unknown> }) => {
+          const row = payload.new as unknown as SeatedRecord;
+          setHistory((prev) => {
+            if (prev.some((r) => r.id === row.id)) return prev;
+            return [...prev, row];
           });
         }
       )

@@ -25,13 +25,13 @@ export async function GET(request: Request) {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  const { error } = await admin
-    .from("waitlist")
-    .delete()
-    .neq("id", "00000000-0000-0000-0000-000000000000");
+  const [{ error: e1 }, { error: e2 }] = await Promise.all([
+    admin.from("waitlist").delete().neq("id", "00000000-0000-0000-0000-000000000000"),
+    admin.from("seated_history").delete().neq("id", "00000000-0000-0000-0000-000000000000"),
+  ]);
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  if (e1 || e2) {
+    return NextResponse.json({ error: (e1 ?? e2)?.message }, { status: 500 });
   }
 
   return NextResponse.json({ wiped: true, at: new Date().toISOString() });

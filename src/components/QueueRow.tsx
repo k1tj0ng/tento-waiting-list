@@ -31,7 +31,16 @@ export default function QueueRow({
     if (error) {
       setSeating(false);
       alert("Could not seat party. Please try again.");
+      return;
     }
+    await supabase.from("seated_history").insert({
+      id: entry.id,
+      name: entry.name,
+      group_size: entry.group_size,
+      phone: entry.phone,
+      created_at: entry.created_at,
+      seated_at: new Date().toISOString(),
+    });
   }
 
   return (

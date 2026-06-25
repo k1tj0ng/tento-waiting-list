@@ -13,12 +13,38 @@ function formatTime(iso: string) {
   });
 }
 
+const STORAGE_KEY = "tento_seated_history";
+
+function loadHistory(): SeatedRecord[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as SeatedRecord[];
+    const today = new Date().toDateString();
+    return parsed.filter((r) => new Date(r.seated_at).toDateString() === today);
+  } catch {
+    return [];
+  }
+}
+
 export default function DashboardPage() {
   const [queue, setQueue] = useState<WaitlistEntry[]>([]);
   const [history, setHistory] = useState<SeatedRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [nowTick, setNowTick] = useState(0);
   const [historyOpen, setHistoryOpen] = useState(true);
+
+  // Restore history from localStorage on mount (today's entries only).
+  useEffect(() => {
+    setHistory(loadHistory());
+  }, []);
+
+  // Persist history to localStorage whenever it changes.
+  useEffect(() => {
+    if (history.length > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+    }
+  }, [history]);
 
   useEffect(() => {
     const supabase = getSupabase();

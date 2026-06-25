@@ -16,9 +16,6 @@ export default function CustomerPage() {
           <h1 className="text-3xl font-semibold tracking-tight text-brand">
             Tento
           </h1>
-          <p className="mt-1 text-sm uppercase tracking-[0.2em] text-brand-accent">
-            Restaurant &amp; Bar
-          </p>
         </header>
 
         {entry ? (

@@ -63,7 +63,7 @@ export default function QueueRow({
         disabled={seating}
         className="shrink-0 rounded-xl bg-green-600 text-white font-semibold px-5 py-3 transition active:scale-[0.98] disabled:opacity-60"
       >
-        {seating ? "Seating…" : "Seat Party"}
+        {seating ? "Seating…" : "Table Ready"}
       </button>
     </div>
   );

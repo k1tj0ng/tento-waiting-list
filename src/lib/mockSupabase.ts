@@ -1,12 +1,11 @@
 import { WaitlistEntry, SeatedRecord } from "./types";
 
-const STORAGE_KEY = "tento_sim_queue";
+const WAITLIST_KEY = "tento_sim_queue";
 const HISTORY_KEY = "tento_sim_history";
 const DATE_KEY = "tento_sim_date";
 const CHANNEL_NAME = "tento_sim";
 
 // ── Daily reset ────────────────────────────────────────────────────────────
-// On each load, if the stored date isn't today, wipe queue + history.
 function todayStr(): string {
   return new Date().toLocaleDateString("en-AU", { timeZone: "Australia/Sydney" });
 }
@@ -16,27 +15,27 @@ export function runDailyReset(): void {
   const stored = localStorage.getItem(DATE_KEY);
   const today = todayStr();
   if (stored !== today) {
-    localStorage.setItem(STORAGE_KEY, "[]");
+    localStorage.setItem(WAITLIST_KEY, "[]");
     localStorage.setItem(HISTORY_KEY, "[]");
     localStorage.setItem(DATE_KEY, today);
   }
 }
 
-// ── Queue helpers ──────────────────────────────────────────────────────────
+// ── Waitlist helpers ───────────────────────────────────────────────────────
 function getQueue(): WaitlistEntry[] {
   if (typeof window === "undefined") return [];
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "[]");
+    return JSON.parse(localStorage.getItem(WAITLIST_KEY) ?? "[]");
   } catch {
     return [];
   }
 }
 
 function saveQueue(q: WaitlistEntry[]) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(q));
+  localStorage.setItem(WAITLIST_KEY, JSON.stringify(q));
 }
 
-// ── History helpers ────────────────────────────────────────────────────────
+// ── Seated history helpers ─────────────────────────────────────────────────
 export function getHistory(): SeatedRecord[] {
   if (typeof window === "undefined") return [];
   try {
@@ -46,26 +45,25 @@ export function getHistory(): SeatedRecord[] {
   }
 }
 
-function addToHistory(entry: WaitlistEntry) {
-  const history = getHistory();
-  history.push({ ...entry, seated_at: new Date().toISOString() });
-  localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+function saveHistory(h: SeatedRecord[]) {
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(h));
 }
 
 // ── BroadcastChannel ───────────────────────────────────────────────────────
-function broadcast(event: "INSERT" | "DELETE" | "HISTORY", row: Partial<WaitlistEntry>) {
+type ChangeEvent = "INSERT" | "DELETE" | "UPDATE";
+
+function broadcast(event: ChangeEvent, table: string, row: Record<string, unknown>) {
   try {
     const bc = new BroadcastChannel(CHANNEL_NAME);
-    bc.postMessage({ event, row });
+    bc.postMessage({ event, table, row });
     bc.close();
   } catch {}
 }
 
-type ChangeEvent = "INSERT" | "DELETE";
 type Listener = (payload: {
   event: ChangeEvent;
-  new?: WaitlistEntry;
-  old?: Partial<WaitlistEntry>;
+  new?: Record<string, unknown>;
+  old?: Partial<Record<string, unknown>>;
 }) => void;
 
 interface ChannelFilter {
@@ -93,15 +91,25 @@ class MockChannel {
     if (typeof window === "undefined") return this;
     this.bc = new BroadcastChannel(CHANNEL_NAME);
     this.bc.onmessage = (msg: MessageEvent) => {
-      const { event, row } = msg.data as { event: ChangeEvent; row: WaitlistEntry };
+      const { event, table, row } = msg.data as {
+        event: ChangeEvent;
+        table: string;
+        row: Record<string, unknown>;
+      };
       for (const { filter, cb } of this.listeners) {
         if (filter.event !== event) continue;
+        if (filter.table !== table) continue;
         if (filter.filter) {
           const parts = filter.filter.split("=eq.");
+          const key = parts[0]?.trim();
           const val = parts[1]?.trim();
-          if (event === "DELETE" && val && row.id !== val) continue;
+          if (key && val && row[key] !== val) continue;
         }
-        cb(event === "INSERT" ? { event, new: row } : { event, old: row });
+        if (event === "INSERT" || event === "UPDATE") {
+          cb({ event, new: row });
+        } else {
+          cb({ event, old: row });
+        }
       }
     };
     return this;
@@ -113,11 +121,14 @@ class MockChannel {
   }
 }
 
-type Operation = "insert" | "select" | "delete";
+// ── Query builder ──────────────────────────────────────────────────────────
+type Operation = "insert" | "select" | "delete" | "update";
+type Row = Record<string, unknown>;
 
 class MockQueryBuilder {
   private _op: Operation = "select";
-  private _data: Partial<WaitlistEntry> | null = null;
+  private _data: Row | null = null;
+  private _updateData: Row | null = null;
   private _eqFilters: Record<string, string> = {};
   private _neqFilters: Record<string, string> = {};
   private _orderCol: string | null = null;
@@ -126,9 +137,15 @@ class MockQueryBuilder {
 
   constructor(private table: string) {}
 
-  insert(data: Partial<WaitlistEntry>) {
+  insert(data: Row) {
     this._op = "insert";
     this._data = data;
+    return this;
+  }
+
+  update(data: Row) {
+    this._op = "update";
+    this._updateData = data;
     return this;
   }
 
@@ -163,63 +180,133 @@ class MockQueryBuilder {
     return this;
   }
 
-  then(
-    resolve: (result: { data: WaitlistEntry | WaitlistEntry[] | null; error: null }) => void
-  ) {
+  then(resolve: (result: { data: Row | Row[] | null; error: null }) => void) {
     Promise.resolve().then(() => resolve(this._execute()));
   }
 
-  private _execute(): { data: WaitlistEntry | WaitlistEntry[] | null; error: null } {
-    if (this._op === "insert") {
-      const queue = getQueue();
-      const entry: WaitlistEntry = {
-        id: crypto.randomUUID(),
-        name: (this._data?.name as string) ?? "",
-        group_size: (this._data?.group_size as number) ?? 1,
-        phone: (this._data?.phone as string) ?? "",
-        status: "waiting",
-        created_at: new Date().toISOString(),
-      };
-      queue.push(entry);
-      saveQueue(queue);
-      broadcast("INSERT", entry);
-      return { data: this._single ? entry : [entry], error: null };
-    }
+  private _sorted(rows: Row[]): Row[] {
+    if (!this._orderCol) return rows;
+    const col = this._orderCol;
+    const asc = this._orderAsc;
+    return [...rows].sort((a, b) => {
+      const av = String(a[col] ?? "");
+      const bv = String(b[col] ?? "");
+      return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+    });
+  }
 
-    if (this._op === "delete") {
-      let queue = getQueue();
-      const removed: WaitlistEntry[] = [];
-      queue = queue.filter((e) => {
-        const idVal = this._eqFilters["id"];
-        const neqIdVal = this._neqFilters["id"];
-        const keep = idVal ? e.id !== idVal : neqIdVal ? e.id === neqIdVal : false;
-        if (!keep) removed.push(e);
-        return keep;
-      });
-      saveQueue(queue);
-      for (const r of removed) {
-        addToHistory(r);
-        broadcast("DELETE", r);
-        broadcast("HISTORY", r);
+  private _applyEqFilters(rows: Row[]): Row[] {
+    let result = rows;
+    for (const [col, val] of Object.entries(this._eqFilters)) {
+      result = result.filter((r) => String(r[col]) === val);
+    }
+    return result;
+  }
+
+  private _execute(): { data: Row | Row[] | null; error: null } {
+    // ── INSERT ──────────────────────────────────────────────────────────────
+    if (this._op === "insert") {
+      if (this.table === "waitlist") {
+        const entry: WaitlistEntry = {
+          id: crypto.randomUUID(),
+          name: (this._data?.name as string) ?? "",
+          group_size: (this._data?.group_size as number) ?? 1,
+          phone: (this._data?.phone as string) ?? "",
+          status: "waiting",
+          created_at: new Date().toISOString(),
+        };
+        const q = getQueue();
+        q.push(entry);
+        saveQueue(q);
+        broadcast("INSERT", "waitlist", entry as unknown as Row);
+        return { data: this._single ? (entry as unknown as Row) : [entry as unknown as Row], error: null };
       }
+
+      if (this.table === "seated_history") {
+        const record = { ...this._data } as SeatedRecord;
+        const h = getHistory();
+        h.push(record);
+        saveHistory(h);
+        broadcast("INSERT", "seated_history", record as unknown as Row);
+        return { data: this._single ? (record as unknown as Row) : [record as unknown as Row], error: null };
+      }
+
       return { data: null, error: null };
     }
 
-    // select
-    let queue = getQueue();
-    for (const [col, val] of Object.entries(this._eqFilters)) {
-      queue = queue.filter((e) => String(e[col as keyof WaitlistEntry]) === val);
+    // ── DELETE ──────────────────────────────────────────────────────────────
+    if (this._op === "delete") {
+      if (this.table === "waitlist") {
+        let queue = getQueue();
+        const removed: WaitlistEntry[] = [];
+        queue = queue.filter((e) => {
+          const idVal = this._eqFilters["id"];
+          const neqIdVal = this._neqFilters["id"];
+          const keep = idVal ? e.id !== idVal : neqIdVal ? e.id === neqIdVal : false;
+          if (!keep) removed.push(e);
+          return keep;
+        });
+        saveQueue(queue);
+        for (const r of removed) {
+          broadcast("DELETE", "waitlist", r as unknown as Row);
+        }
+        return { data: null, error: null };
+      }
+
+      if (this.table === "seated_history") {
+        let history = getHistory();
+        history = history.filter((r) => {
+          const idVal = this._eqFilters["id"];
+          const neqIdVal = this._neqFilters["id"];
+          return idVal ? r.id !== idVal : neqIdVal ? r.id === neqIdVal : false;
+        });
+        saveHistory(history);
+        return { data: null, error: null };
+      }
+
+      return { data: null, error: null };
     }
-    if (this._orderCol) {
-      const col = this._orderCol as keyof WaitlistEntry;
-      const asc = this._orderAsc;
-      queue = [...queue].sort((a, b) => {
-        const av = String(a[col]);
-        const bv = String(b[col]);
-        return asc ? av.localeCompare(bv) : bv.localeCompare(av);
-      });
+
+    // ── UPDATE ──────────────────────────────────────────────────────────────
+    if (this._op === "update") {
+      if (this.table === "waitlist") {
+        let queue = getQueue();
+        const updated: WaitlistEntry[] = [];
+        queue = queue.map((e) => {
+          const idVal = this._eqFilters["id"];
+          if (idVal && e.id === idVal) {
+            const newEntry = { ...e, ...this._updateData } as WaitlistEntry;
+            updated.push(newEntry);
+            return newEntry;
+          }
+          return e;
+        });
+        saveQueue(queue);
+        for (const r of updated) {
+          broadcast("UPDATE", "waitlist", r as unknown as Row);
+        }
+        return { data: this._single ? (updated[0] as unknown as Row ?? null) : (updated as unknown as Row[]), error: null };
+      }
+
+      return { data: null, error: null };
     }
-    return { data: this._single ? (queue[0] ?? null) : queue, error: null };
+
+    // ── SELECT ──────────────────────────────────────────────────────────────
+    if (this.table === "waitlist") {
+      let rows = getQueue() as unknown as Row[];
+      rows = this._applyEqFilters(rows);
+      rows = this._sorted(rows);
+      return { data: this._single ? (rows[0] ?? null) : rows, error: null };
+    }
+
+    if (this.table === "seated_history") {
+      let rows = getHistory() as unknown as Row[];
+      rows = this._applyEqFilters(rows);
+      rows = this._sorted(rows);
+      return { data: this._single ? (rows[0] ?? null) : rows, error: null };
+    }
+
+    return { data: [], error: null };
   }
 }
 

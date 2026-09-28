@@ -1,4 +1,4 @@
-export type WaitlistStatus = "waiting";
+export type WaitlistStatus = "waiting" | "cancelled";
 
 export interface WaitlistEntry {
   id: string;

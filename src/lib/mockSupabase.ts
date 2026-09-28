@@ -223,7 +223,7 @@ class MockQueryBuilder {
       }
 
       if (this.table === "seated_history") {
-        const record = { ...this._data } as SeatedRecord;
+        const record = { ...this._data } as unknown as SeatedRecord;
         const h = getHistory();
         h.push(record);
         saveHistory(h);

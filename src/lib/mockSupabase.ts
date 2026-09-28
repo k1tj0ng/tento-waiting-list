@@ -180,6 +180,11 @@ class MockQueryBuilder {
     return this;
   }
 
+  maybeSingle() {
+    this._single = true;
+    return this;
+  }
+
   then(resolve: (result: { data: Row | Row[] | null; error: null }) => void) {
     Promise.resolve().then(() => resolve(this._execute()));
   }
